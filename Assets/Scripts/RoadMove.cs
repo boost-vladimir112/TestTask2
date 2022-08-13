@@ -6,6 +6,7 @@ using UnityEngine;
 public class RoadMove : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private float _lifeTime = 6f;
     
 
     private Rigidbody rb;
@@ -14,8 +15,17 @@ public class RoadMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
+    private void Update()
+    {
+        _lifeTime -= Time.deltaTime;
+        if (_lifeTime <= 0f)
+        {
+            Destroy(gameObject);
+        }
+    }
     private void FixedUpdate()
     {
         rb.velocity = new Vector3(0, 0, -_speed);
     }
+
 }
