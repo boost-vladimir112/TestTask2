@@ -23,12 +23,12 @@ public class PlayerController : MonoBehaviour
 
     private void SwipeTracker()
     {
-        if (SwipeController.swipeRight)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (_lineToMove < 2)
                 _lineToMove++;
         }
-        if (SwipeController.swipeLeft)
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (_lineToMove > 0)
                 _lineToMove--;
