@@ -6,14 +6,11 @@ public class RoadGenerator : MonoBehaviour
 {
     [SerializeField] private Transform _spawnPos;
     [SerializeField] private GameObject[] _roads;
-    private bool _canSpawn = false;
 
     private float _spawnTimer = 2.5f;
     private float _currentTimer;
 
     private GameObject _currentRoad;
-
-    [SerializeField]DestroyRoad destroyRoad;
 
     private void Start()
     {
