@@ -309,7 +309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &334576060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,8 +559,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPos: {fileID: 618927235}
   _roads:
+  - {fileID: 591471203978755761, guid: b27bd76f686a3fc48ab58dc4ad5c150a, type: 3}
   - {fileID: 591471203978755761, guid: c57af0fa8e4079243a2ecbcf965a567c, type: 3}
-  - {fileID: 591471203978755761, guid: c57af0fa8e4079243a2ecbcf965a567c, type: 3}
+  _spawnTimer: 3.5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

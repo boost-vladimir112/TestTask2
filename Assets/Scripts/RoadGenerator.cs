@@ -7,7 +7,7 @@ public class RoadGenerator : MonoBehaviour
     [SerializeField] private Transform _spawnPos;
     [SerializeField] private GameObject[] _roads;
 
-    private float _spawnTimer = 2.5f;
+    [SerializeField] private float _spawnTimer = 2.5f;
     private float _currentTimer;
 
     private GameObject _currentRoad;
