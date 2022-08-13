@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 100
+  _lifeTime: 6
 --- !u!1 &591471204166651118
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +225,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 94c82278a28d0fb438c95bf00b14c916, type: 2}
+  - {fileID: 2100000, guid: 98b90effe933d2d40a7ba2ffb48bd904, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
