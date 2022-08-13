@@ -4,20 +4,50 @@ using UnityEngine;
 
 public class RoadGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject [] _roads;
+    [SerializeField] private Transform _spawnPos;
+    [SerializeField] private GameObject[] _roads;
+    private bool _canSpawn = false;
 
-    [SerializeField] private bool _generateStatus;
-    [SerializeField] private int _currentRoadLenght = 0;
-    [SerializeField] private int _maxRoadLenght = 6;
+    private float _spawnTimer = 2.5f;
+    private float _currentTimer;
 
-    private int _currentRoad = -1;
+    private GameObject _currentRoad;
 
-    private void FixedUpdate()
+    [SerializeField]DestroyRoad destroyRoad;
+
+    private void Start()
     {
-        if(_generateStatus)
-        {
-
-        }
+        _currentTimer = _spawnTimer;
     }
 
+    private void Update()
+    {
+        
+        _currentTimer -= Time.deltaTime;
+        if (_currentTimer <= 0)
+        {
+            InstantiateRoad();
+            _currentTimer = _spawnTimer;
+        }
+          
+
+
+    }
+
+
+    private void RandomRoad()
+    {
+        _currentRoad = _roads[Random.Range(0, _roads.Length)];
+    }
+    private void InstantiateRoad()
+    {
+        RandomRoad();
+        Instantiate(_currentRoad, _spawnPos.position, transform.rotation);
+    }
+ 
 }
+
+  
+
+
+
