@@ -1,17 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private int _lineToMove = 1;
     [SerializeField] private float _lineDistance = 4;
+    [SerializeField] GameObject _losePanel;
+    private bool _isDead;
 
+    public bool IsDead { get => _isDead; set => _isDead = value; }
 
-    void Start()
-    {
-        
-    }
     private void Update()
     {
         SwipeTracker();
@@ -43,5 +40,14 @@ public class PlayerController : MonoBehaviour
             targetPosition += Vector3.right * _lineDistance;
 
         transform.position = targetPosition;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Obstacle")
+        {
+            Time.timeScale = 0;
+            _losePanel.SetActive(true);
+            _isDead = true;
+        }
     }
 }
