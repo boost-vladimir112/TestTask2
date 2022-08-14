@@ -7,10 +7,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _lineDistance = 4;
 
     [SerializeField] private GameObject _losePanel;
-    
+
+    [SerializeField] private AudioSource _deadSound;
+    [SerializeField] private AudioClip _deadClip;
+
     private bool _isDead = false;
 
     public bool IsDead { get => _isDead; set => _isDead = value; }
+
+    private void Start()
+    {
+        _deadClip = _deadSound.clip;
+    }
 
     private void Update()
     {
@@ -48,6 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Obstacle")
         {
+            _deadSound.PlayOneShot(_deadClip);
             Time.timeScale = 0;
             _losePanel.SetActive(true);
             _isDead = true;
