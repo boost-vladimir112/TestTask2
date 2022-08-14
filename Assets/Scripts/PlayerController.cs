@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject _losePanel;
 
-    [SerializeField] private AudioSource _deadSound;
-    [SerializeField] private AudioClip _deadClip;
+    [SerializeField] private AudioSource _swapSound;
+    [SerializeField] private AudioClip _swapClip;
 
     private bool _isDead = false;
 
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        _deadClip = _deadSound.clip;
+        _swapClip = _swapSound.clip;
     }
 
     private void Update()
@@ -34,12 +34,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (_lineToMove < 2)
+            {
                 _lineToMove++;
+                _swapSound.PlayOneShot(_swapClip);
+            }
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (_lineToMove > 0)
+            {
                 _lineToMove--;
+                _swapSound.PlayOneShot(_swapClip);
+            }
         }
     }
     private void SwipePosition()
@@ -56,7 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Obstacle")
         {
-            _deadSound.PlayOneShot(_deadClip);
+            
             Time.timeScale = 0;
             _losePanel.SetActive(true);
             _isDead = true;

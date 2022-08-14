@@ -326,8 +326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lineDistance: 4
   _losePanel: {fileID: 869743626}
-  _deadSound: {fileID: 334576066}
-  _deadClip: {fileID: 8300000, guid: 7e060b2ec64b9dc4f922accabd6dcfe9, type: 3}
+  _swapSound: {fileID: 334576066}
+  _swapClip: {fileID: 8300000, guid: 56d3838ad7008f747a3301ed4c719f9a, type: 3}
 --- !u!136 &334576061
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -431,9 +431,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7e060b2ec64b9dc4f922accabd6dcfe9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 56d3838ad7008f747a3301ed4c719f9a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.284
   m_Pitch: 1
   Loop: 0
   Mute: 0
