@@ -1,11 +1,14 @@
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     private int _lineToMove = 1;
     [SerializeField] private float _lineDistance = 4;
-    [SerializeField] GameObject _losePanel;
-    private bool _isDead;
+
+    [SerializeField] private GameObject _losePanel;
+    
+    private bool _isDead = false;
 
     public bool IsDead { get => _isDead; set => _isDead = value; }
 
@@ -49,5 +52,7 @@ public class PlayerController : MonoBehaviour
             _losePanel.SetActive(true);
             _isDead = true;
         }
+       
+
     }
 }
