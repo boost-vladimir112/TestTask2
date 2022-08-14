@@ -1,12 +1,9 @@
 using UnityEngine;
 using TMPro;
-
-
 public class ConvertCoinsToString : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _moneyText;
     private int _coins;
-
     private void Start()
     {
         _coins = PlayerPrefs.GetInt("coins");
@@ -28,6 +25,4 @@ public class ConvertCoinsToString : MonoBehaviour
             _coins++;
         }
     }
-
-
 }

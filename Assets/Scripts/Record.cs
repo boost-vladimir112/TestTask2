@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -23,7 +21,6 @@ public class Record : MonoBehaviour
     }
     private void CompareScore()
     {
-
         if (_currentScore > _record)
         {
             _record = _currentScore;
@@ -31,5 +28,4 @@ public class Record : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
-
 }

@@ -1,12 +1,11 @@
 using UnityEngine;
 using TMPro;
-
 public class Score : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _scoreText;
-    [SerializeField] private PlayerController _playerController;
-
     private int _score;
+
+    [SerializeField] private PlayerController _playerController;
     private void Update()
     {
         if(!_playerController.IsDead)

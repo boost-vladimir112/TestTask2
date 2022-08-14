@@ -209,3 +209,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacleSound: {fileID: 6709257368482105617}
   _obstacleClip: {fileID: 8300000, guid: 7e060b2ec64b9dc4f922accabd6dcfe9, type: 3}
+  _spawnPos: {fileID: 3062755981383201071}
+  _deadVFX: {fileID: 3977588779075138089, guid: bd1c881bf3907a04a82efeb3ccfbbe03, type: 3}

@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class RoadGenerator : MonoBehaviour
 {
     [SerializeField] private Transform _spawnPos;
@@ -10,11 +9,12 @@ public class RoadGenerator : MonoBehaviour
 
     private GameObject _currentRoad;
 
+    [SerializeField] private PlayerController _playerController;
+
     private void Start()
     {
         _currentTimer = _spawnTimer;
     }
-
     private void Update()
     {
         _currentTimer -= Time.deltaTime;
@@ -24,21 +24,16 @@ public class RoadGenerator : MonoBehaviour
             _currentTimer = _spawnTimer;
         }
     }
-
-
     private void RandomRoad()
     {
         _currentRoad = _roads[Random.Range(0, _roads.Length)];
     }
     private void InstantiateRoad()
     {
-        RandomRoad();
-        Instantiate(_currentRoad, _spawnPos.position, transform.rotation);
+        if (!_playerController.IsDead)
+        {
+            RandomRoad();
+            Instantiate(_currentRoad, _spawnPos.position, transform.rotation);
+        }
     }
- 
 }
-
-  
-
-
-

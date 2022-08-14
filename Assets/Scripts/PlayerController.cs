@@ -5,20 +5,18 @@ public class PlayerController : MonoBehaviour
     private int _lineToMove = 1;
     [SerializeField] private float _lineDistance = 4;
 
-    [SerializeField] private GameObject _losePanel;
+    [SerializeField] public GameObject _losePanel;
 
     [SerializeField] private AudioSource _swapSound;
     [SerializeField] private AudioClip _swapClip;
 
     private bool _isDead = false;
-
     public bool IsDead { get => _isDead; set => _isDead = value; }
 
     private void Start()
     {
         _swapClip = _swapSound.clip;
     }
-
     private void Update()
     {
         SwipeTracker();
@@ -27,7 +25,6 @@ public class PlayerController : MonoBehaviour
     {
         SwipePosition();
     }
-
     private void SwipeTracker()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -60,9 +57,9 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Obstacle")
         {
-            Time.timeScale = 0;
             _losePanel.SetActive(true);
             _isDead = true;
+            gameObject.SetActive(false);
         }
     }
 }
