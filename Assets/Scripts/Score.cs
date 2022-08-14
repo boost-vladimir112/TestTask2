@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 using TMPro;
 
 public class Score : MonoBehaviour
@@ -8,7 +7,6 @@ public class Score : MonoBehaviour
     [SerializeField] private PlayerController _playerController;
 
     private int _score;
-
     private void Update()
     {
         if(!_playerController.IsDead)

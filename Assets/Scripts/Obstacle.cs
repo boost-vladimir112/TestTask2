@@ -15,7 +15,6 @@ public class Obstacle : MonoBehaviour
         if (other.tag == "Player")
         {
             _obstacleSound.PlayOneShot(_obstacleClip);
-
         }
     }
 }

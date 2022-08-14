@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RoadGenerator : MonoBehaviour
@@ -19,16 +17,12 @@ public class RoadGenerator : MonoBehaviour
 
     private void Update()
     {
-        
         _currentTimer -= Time.deltaTime;
         if (_currentTimer <= 0)
         {
             InstantiateRoad();
             _currentTimer = _spawnTimer;
         }
-          
-
-
     }
 
 

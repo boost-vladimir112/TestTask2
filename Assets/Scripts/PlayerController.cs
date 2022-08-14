@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -55,19 +54,15 @@ public class PlayerController : MonoBehaviour
             targetPosition += Vector3.left * _lineDistance;
         else if (_lineToMove == 2)
             targetPosition += Vector3.right * _lineDistance;
-
         transform.position = targetPosition;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Obstacle")
         {
-            
             Time.timeScale = 0;
             _losePanel.SetActive(true);
             _isDead = true;
         }
-       
-
     }
 }

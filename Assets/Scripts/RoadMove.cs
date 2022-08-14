@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -8,7 +6,6 @@ public class RoadMove : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _lifeTime = 6f;
     
-
     private Rigidbody rb;
 
     private void Start()
